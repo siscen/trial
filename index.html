@@ -301,7 +301,7 @@ function indLine(iso3){const o=S.ind[iso3];if(!o)return'';
 function popup(t){
  return `<div class="pp"><h4>${esc(t.name)}</h4><div style="color:#567">${esc(t.port)}, ${esc(t.country)}${t.apmt?' · <b style="color:#0e7490">APM Terminals</b>':''}</div>
  <dl class="kv"><dt>Operator</dt><dd>${esc(t.operator||'–')}</dd><dt>Port throughput</dt><dd>${t.teu_m!=null?nf(t.teu_m,1)+' M TEU':'–'}${t.teu_year?`<sup>${esc(t.teu_year)}</sup>`:''}</dd>
- <dt>Max draft</dt><dd>${t.maxDraft_m!=null?nf(t.maxDraft_m,1)+' m':'–'}</dd><dt>Position</dt><dd>${nf(t.lat,3)}, ${nf(t.lon,3)}</dd>${indLine(t.iso3)}</dl>
+ <dt>Max draft</dt><dd>${t.maxDraft_m!=null?nf(t.maxDraft_m,1)+' m':'–'}</dd><dt>Position</dt><dd>${nf(t.lat,3)}, ${nf(t.lon,3)}${t.pos==='approx'?' <span class="warn" title="Not checked against imagery; may be up to ~1 km off the quay">approx.</span>':''}</dd>${indLine(t.iso3)}</dl>${t.note?`<p class="hint" style="margin:0 0 8px">${esc(t.note)}</p>`:''}
  <div class="row"><button class="btn sm" data-act="zoom" data-id="${esc(t.id)}">Satellite zoom</button><button class="btn sm" data-act="from" data-id="${esc(t.id)}">From</button><button class="btn sm" data-act="to" data-id="${esc(t.id)}">To</button></div></div>`}
 
 function initMap(){
@@ -316,7 +316,7 @@ function initMap(){
  L.control.layers({'Satellite':sat,'Streets':street},{'Place labels':labels,'Sea marks (OpenSeaMap)':sea},{collapsed:true}).addTo(map);
  L.control.scale({imperial:false}).addTo(map);
  const lg=L.control({position:'bottomright'});lg.onAdd=()=>{const d=L.DomUtil.create('div');d.style.cssText='background:#fff;padding:6px 8px;border-radius:8px;font-size:11px;line-height:1.6';
-  d.innerHTML='<div><i class="mk" style="background:#06b6d4"></i> APM Terminals</div><div><i class="mk" style="background:#f59e0b"></i> Other operator</div><div style="color:#789">Size = port TEU</div>';return d};lg.addTo(map);
+  d.innerHTML='<div><i class="mk" style="background:#06b6d4"></i> APM Terminals</div><div><i class="mk" style="background:#f59e0b"></i> Other operator</div><div style="color:#789">Size = port TEU</div><div style="color:#789">Most positions approximate (±1 km)</div>';return d};lg.addTo(map);
  markerLayer=L.layerGroup().addTo(map);routeLayer=L.layerGroup().addTo(map);
  S.terms.forEach(t=>{marks[t.id]=L.circleMarker([t.lat,t.lon],{radius:radiusOf(t),color:'#fff',weight:1.5,fillColor:colourOf(t),fillOpacity:.9})
   .bindTooltip(esc(t.name)).bindPopup(()=>popup(t),{maxWidth:300})});
