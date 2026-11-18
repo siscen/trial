@@ -1,0 +1,163 @@
+{
+  "asOf": "2026-11-18",
+  "indices": [
+    {
+      "id": "wci",
+      "name": "Drewry WCI Composite",
+      "value": 4305,
+      "unit": "USD/40ft",
+      "date": "2026-11-12",
+      "wow_pct": -2,
+      "source": "https://www.drewry.co.uk/supply-chain-advisors/supply-chain-expertise/world-container-index-assessed-by-drewry"
+    },
+    {
+      "id": "scfi",
+      "name": "SCFI Composite",
+      "value": 3572.33,
+      "unit": "index points",
+      "date": "2026-11-13",
+      "wow_pct": -1.68,
+      "source": "https://container-news.com/container-freight-rates-remain-under-pressure-as-major-benchmarks-decline/"
+    },
+    {
+      "id": "fbx",
+      "name": "Freightos Baltic Index (FBX) Global",
+      "value": 3485,
+      "unit": "USD/40ft",
+      "date": "2026-11-13",
+      "wow_pct": 0.96,
+      "source": "https://www.freightos.com/enterprise/terminal/freightos-baltic-index-global-container-pricing-index/",
+      "note": "Week ending ~13 Nov; reported by Container News ~17 Nov (prev. 3452). Exact assessment date not confirmed."
+    }
+  ],
+  "lanes": [
+    {
+      "id": "sha-rtm",
+      "from": "Shanghai",
+      "to": "Rotterdam",
+      "fromLocode": "CNSHA",
+      "toLocode": "NLRTM",
+      "usd40": 3504,
+      "date": "2026-11-12",
+      "wow_pct": -3,
+      "source": "https://www.drewry.co.uk/supply-chain-advisors/supply-chain-expertise/world-container-index-assessed-by-drewry"
+    },
+    {
+      "id": "rtm-sha",
+      "from": "Rotterdam",
+      "to": "Shanghai",
+      "fromLocode": "NLRTM",
+      "toLocode": "CNSHA",
+      "usd40": 633,
+      "date": "2026-11-12",
+      "wow_pct": 3,
+      "source": "https://shippingtelegraph.com/freight-news/drewry-the-world-container-index-decreased-2-this-week-46-2026/",
+      "note": "Secondary source citing Drewry; not verified on Drewry page."
+    },
+    {
+      "id": "sha-goa",
+      "from": "Shanghai",
+      "to": "Genoa",
+      "fromLocode": "CNSHA",
+      "toLocode": "ITGOA",
+      "usd40": 4168,
+      "date": "2026-11-12",
+      "wow_pct": 0,
+      "source": "https://www.drewry.co.uk/supply-chain-advisors/supply-chain-expertise/world-container-index-assessed-by-drewry"
+    },
+    {
+      "id": "sha-lax",
+      "from": "Shanghai",
+      "to": "Los Angeles",
+      "fromLocode": "CNSHA",
+      "toLocode": "USLAX",
+      "usd40": 7416,
+      "date": "2026-11-12",
+      "wow_pct": -2,
+      "source": "https://www.drewry.co.uk/supply-chain-advisors/supply-chain-expertise/world-container-index-assessed-by-drewry"
+    },
+    {
+      "id": "lax-sha",
+      "from": "Los Angeles",
+      "to": "Shanghai",
+      "fromLocode": "USLAX",
+      "toLocode": "CNSHA",
+      "usd40": 807,
+      "date": "2026-11-12",
+      "wow_pct": -1,
+      "source": "https://shippingtelegraph.com/freight-news/drewry-the-world-container-index-decreased-2-this-week-46-2026/",
+      "note": "Secondary source citing Drewry; not verified on Drewry page."
+    },
+    {
+      "id": "sha-nyc",
+      "from": "Shanghai",
+      "to": "New York",
+      "fromLocode": "CNSHA",
+      "toLocode": "USNYC",
+      "usd40": 9020,
+      "date": "2026-11-12",
+      "wow_pct": -3,
+      "source": "https://www.drewry.co.uk/supply-chain-advisors/supply-chain-expertise/world-container-index-assessed-by-drewry"
+    },
+    {
+      "id": "nyc-rtm",
+      "from": "New York",
+      "to": "Rotterdam",
+      "fromLocode": "USNYC",
+      "toLocode": "NLRTM",
+      "usd40": 1188,
+      "date": "2026-11-12",
+      "wow_pct": 1,
+      "source": "https://shippingtelegraph.com/freight-news/drewry-the-world-container-index-decreased-2-this-week-46-2026/",
+      "note": "Secondary source citing Drewry; not verified on Drewry page."
+    },
+    {
+      "id": "rtm-nyc",
+      "from": "Rotterdam",
+      "to": "New York",
+      "fromLocode": "NLRTM",
+      "toLocode": "USNYC",
+      "usd40": 3083,
+      "date": "2026-11-12",
+      "wow_pct": 1,
+      "source": "https://shippingtelegraph.com/freight-news/drewry-the-world-container-index-decreased-2-this-week-46-2026/",
+      "note": "Secondary source citing Drewry; not verified on Drewry page."
+    },
+    {
+      "id": "fbx13-asia-med",
+      "from": "China/East Asia",
+      "to": "Mediterranean",
+      "fromLocode": null,
+      "toLocode": null,
+      "usd40": 4300,
+      "date": "2026-11-13",
+      "wow_pct": -1,
+      "source": "https://www.freightos.com/freight-resources/us-air-cargo-recovering-from-outage-new-us-cn-tensions-ahead-of-talks-november-17-2026-update/",
+      "note": "Freightos FBX13 weekly, approx. value ('about $4,300/FEU'), week ending 13 Nov. Region-level, not a Shanghai-Istanbul port pair.",
+      "fromCountries": [
+        "CN",
+        "HK",
+        "TW",
+        "KR",
+        "JP"
+      ],
+      "toCountries": [
+        "ES",
+        "FR",
+        "IT",
+        "MT",
+        "GR",
+        "TR",
+        "EG",
+        "MA",
+        "SI",
+        "HR",
+        "CY",
+        "IL",
+        "LB",
+        "DZ",
+        "TN"
+      ]
+    }
+  ]
+}
